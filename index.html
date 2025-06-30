@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Perusahaan | Halaman Login</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+</head>
+<body class="bg-gray-100">
+
+    <div id="login-page" class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
+            <div>
+                <svg class="mx-auto h-12 w-auto text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.311a7.5 7.5 0 00-7.5 0C4.58 19.64 3 21.655 3 24h18c0-2.345-1.58-4.36-3.75-5.022z" />
+                </svg>
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+                    Selamat Datang
+                </h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Silakan masuk untuk melanjutkan
+                </p>
+            </div>
+            <form id="login-form" class="mt-8 space-y-6" action="#" method="POST">
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                        <label for="username" class="sr-only">Username</label>
+                        <input id="username" name="username" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" placeholder="Username">
+                    </div>
+                    <div>
+                        <label for="password" class="sr-only">Password</label>
+                        <input id="password" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" placeholder="Password">
+                    </div>
+                </div>
+                <div id="error-message" class="text-red-500 text-sm hidden">Username atau password salah! (Hint: admin/password)</div>
+
+                <div>
+                    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Masuk
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="main-app" class="hidden min-h-screen bg-gray-100">
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-500" data-page="beranda">Beranda</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-500" data-page="tentang">Tentang</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-500" data-page="servis">Servis</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-500" data-page="kontak">Kontak</a>
+                </nav>
+
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-gray-800">
+                        LOGO ANDA
+                    </span>
+                </div>
+                
+                <div class="flex items-center">
+                    <button id="logout-button" class="ml-4 bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium">
+                        Log Out
+                    </button>
+                    <div class="md:hidden ml-4">
+                        <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+                <a href="#" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 nav-link" data-page="beranda">Beranda</a>
+                <a href="#" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 nav-link" data-page="tentang">Tentang</a>
+                <a href="#" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 nav-link" data-page="servis">Servis</a>
+                <a href="#" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 nav-link" data-page="kontak">Kontak</a>
+            </div>
+        </header>
+
+        <main class="container mx-auto p-6 md:p-8">
+            <div id="page-content-container">
+                </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
